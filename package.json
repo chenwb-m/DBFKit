@@ -4,12 +4,15 @@
   "description": "help to parse or write dbf file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node",
+    "prepublish": "cake build"
   },
   "dependencies": {
     "iconv": "*",
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coffee-script": ">=1.3.3"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chenwb-m/DBFKit.git"
