@@ -1,4 +1,3 @@
-{EventEmitter} = require 'events'
 fs = require 'fs'
 util = require 'util'
 path = require 'path'
@@ -22,7 +21,7 @@ rFill = (str, len, char)->
     str
 
 
-class DBFWriter extends EventEmitter
+class DBFWriter
     ###
     header: {
         name: 'name', 
@@ -38,7 +37,7 @@ class DBFWriter extends EventEmitter
             throw new Error "you must provide a String object as third paramter to indicate which dir to store!"
         if typeof @fileName != "string"
             throw new Error "you must provide a String object as fourth paramter to indicate the file name!"
-        @_initOptions()
+        @_initOptions options
         @header = []
         @_initHeader header
         if !(fs.existsSync @dirName)
@@ -47,13 +46,11 @@ class DBFWriter extends EventEmitter
         @iconv = new Iconv 'UTF-8', @options.encoding+'//IGNORE'
 
     write: ()->
-        if fs.existsSync @pathName && @options.coverIfFileExist==false
+        if fs.existsSync(@pathName) and @options.coverIfFileExist==false
             throw new Error "the file aready exist!"
         wsBuffer = new Buffer 32 + 32*@header.length + 1 + @header.totalFieldsLength*@doc.length + 1
-        # console.log "bufferLength: " + (32 + 32*@header.length + 1 + @header.totalFieldsLength*@doc.length + 1)
         @_writeBufferHead wsBuffer
         @_writeBufferBody wsBuffer
-        # console.log @pathName
         fs.writeFileSync @pathName, wsBuffer
 
 
@@ -64,7 +61,7 @@ class DBFWriter extends EventEmitter
                 @options.encoding = options.encoding
             else
                 @options.encoding = 'gb2312'
-            if options.coverIfFileExist typeof options.coverIfFileExist == 'boolean'
+            if options.coverIfFileExist == false
                 @options.coverIfFileExist = options.coverIfFileExist
             else
                 @options.coverIfFileExist = true
@@ -130,7 +127,6 @@ class DBFWriter extends EventEmitter
                     when 'L'
                         offset = @_writeBufferLogic val, head, wsBuffer, offset
         wsBuffer.writeUInt8 26, offset#26 (1Ah) EOF marker
-        @emit 'finish'
     _writeBufferString: (val, head, wsBuffer, offset)->
         val = "" unless val
         if val instanceof Date

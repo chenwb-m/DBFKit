@@ -33,17 +33,10 @@ doc = [
 pathName = './dbfout'
 fileName = 'people.dbf'
 
-# header = [
-#         name: 'name'
-#         type: 'C'
-# ]
-# doc = [
-#         name: 'name'
-# ]
-dbfWriter = new DBFWriter header, doc, pathName, fileName
-
-dbfWriter.on 'finish', ()->
-    console.log "finish"
-
+dbfWriter = new DBFWriter header, doc, pathName, fileName, 
+    encoding: 'gb2312'
+    coverIfFileExist: true
 dbfWriter.write()
+
+console.log "finish"
 #console.log 21.toFixed(2).toString().charCodeAt(0)
