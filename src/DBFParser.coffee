@@ -77,7 +77,7 @@ class DBFParser extends EventEmitter
                 if isNaN(value)
                     value = null
             when 'L'
-                value = buffer.slice begin, end
+                value = buffer.slice(begin, end).toString()
                 if value=='Y' or value=='y' or value=='T' or value=='t'
                     value = true
                 else if value=='N' or value=='n' or value=='F' or value=='f'
