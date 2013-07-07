@@ -1,0 +1,147 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/chenwb/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /home/chenwb/.npm/1f1177db-tar.lock
+15 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+16 verbose lock tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz /home/chenwb/.npm/8809f88d-67141-0-6326862152200192-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+20 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+21 verbose tar unpack /home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+22 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+23 verbose lock tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package /home/chenwb/.npm/04ac8333-67141-0-6326862152200192-package.lock
+24 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+25 verbose lock tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz /home/chenwb/.npm/8809f88d-67141-0-6326862152200192-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+31 silly gunzTarPerm extractEntry index.js
+32 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+33 silly gunzTarPerm extractEntry Cakefile
+34 silly gunzTarPerm modified mode [ 'Cakefile', 436, 420 ]
+35 silly gunzTarPerm extractEntry readme.md
+36 silly gunzTarPerm modified mode [ 'readme.md', 436, 420 ]
+37 silly gunzTarPerm extractEntry src/DBFParser.coffee
+38 silly gunzTarPerm modified mode [ 'src/DBFParser.coffee', 436, 420 ]
+39 silly gunzTarPerm extractEntry src/DBFWriter.coffee
+40 silly gunzTarPerm modified mode [ 'src/DBFWriter.coffee', 436, 420 ]
+41 silly gunzTarPerm extractEntry test/DBFParserTest.coffee
+42 silly gunzTarPerm modified mode [ 'test/DBFParserTest.coffee', 436, 420 ]
+43 silly gunzTarPerm extractEntry test/DBFWriteTest.coffee
+44 silly gunzTarPerm modified mode [ 'test/DBFWriteTest.coffee', 436, 420 ]
+45 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+46 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+47 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+48 silly lockFile 8809f88d-67141-0-6326862152200192-tmp-tgz tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/tmp.tgz
+49 verbose tar pack [ '/home/chenwb/.npm/DBFKit/1.0.0/package.tgz',
+49 verbose tar pack   '/home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package' ]
+50 verbose tarball /home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+51 verbose folder /home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+52 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+53 verbose lock tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package /home/chenwb/.npm/04ac8333-67141-0-6326862152200192-package.lock
+54 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+55 verbose lock tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz /home/chenwb/.npm/a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz.lock
+56 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+57 silly lockFile 04ac8333-67141-0-6326862152200192-package tar:///home/chenwb/tmp/npm-25271-oO9Uz-ho/1373241067141-0.6326862152200192/package
+58 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+59 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+60 silly lockFile 313c4ecc--chenwb-npm-DBFKit-1-0-0-package /home/chenwb/.npm/DBFKit/1.0.0/package
+61 verbose lock /home/chenwb/.npm/DBFKit/1.0.0/package /home/chenwb/.npm/313c4ecc--chenwb-npm-DBFKit-1-0-0-package.lock
+62 silly lockFile 313c4ecc--chenwb-npm-DBFKit-1-0-0-package /home/chenwb/.npm/DBFKit/1.0.0/package
+63 silly lockFile 313c4ecc--chenwb-npm-DBFKit-1-0-0-package /home/chenwb/.npm/DBFKit/1.0.0/package
+64 verbose tar unpack /home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+65 silly lockFile e38e8829--chenwb-npm-DBFKit-1-0-0-package tar:///home/chenwb/.npm/DBFKit/1.0.0/package
+66 verbose lock tar:///home/chenwb/.npm/DBFKit/1.0.0/package /home/chenwb/.npm/e38e8829--chenwb-npm-DBFKit-1-0-0-package.lock
+67 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+68 verbose lock tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz /home/chenwb/.npm/a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz.lock
+69 silly gunzTarPerm modes [ '755', '644' ]
+70 silly gunzTarPerm extractEntry package.json
+71 silly gunzTarPerm extractEntry .npmignore
+72 silly gunzTarPerm extractEntry index.js
+73 silly gunzTarPerm extractEntry Cakefile
+74 silly gunzTarPerm extractEntry readme.md
+75 silly gunzTarPerm extractEntry src/DBFParser.coffee
+76 silly gunzTarPerm extractEntry src/DBFWriter.coffee
+77 silly gunzTarPerm extractEntry test/DBFParserTest.coffee
+78 silly gunzTarPerm extractEntry test/DBFWriteTest.coffee
+79 silly lockFile e38e8829--chenwb-npm-DBFKit-1-0-0-package tar:///home/chenwb/.npm/DBFKit/1.0.0/package
+80 silly lockFile e38e8829--chenwb-npm-DBFKit-1-0-0-package tar:///home/chenwb/.npm/DBFKit/1.0.0/package
+81 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+82 silly lockFile a53d5b87-nwb-npm-DBFKit-1-0-0-package-tgz tar:///home/chenwb/.npm/DBFKit/1.0.0/package.tgz
+83 verbose chmod /home/chenwb/.npm/DBFKit/1.0.0/package.tgz 644
+84 verbose chown /home/chenwb/.npm/DBFKit/1.0.0/package.tgz [ 1000, 1000 ]
+85 silly lockFile 3a52ce78- .
+86 silly lockFile 3a52ce78- .
+87 silly publish { name: 'DBFKit',
+87 silly publish   version: '1.0.0',
+87 silly publish   description: 'help to parse or write dbf file',
+87 silly publish   main: 'index.js',
+87 silly publish   dependencies: { iconv: '*' },
+87 silly publish   devDependencies: { 'coffee-script': '>=1.3.3' },
+87 silly publish   scripts: { test: 'node', prepublish: 'cake build' },
+87 silly publish   repository: { type: 'git', url: 'https://github.com/chenwb-m/DBFKit.git' },
+87 silly publish   keywords: [ 'dbf', 'DBFKit' ],
+87 silly publish   author: { name: 'chenwb-m' },
+87 silly publish   license: 'MIT',
+87 silly publish   bugs: { url: 'https://github.com/chenwb-m/DBFKit/issues' },
+87 silly publish   readme: '\n## Example\n\n### DBFWriter\n    DBFKit = require "DBFKit"\n    DBFWriter = DBFKit.DBFWriter\n\n    header = [\n    {\n      name: \'name\',\n      type: \'C\'\n    }, {\n      name: \'gender\',\n      type: \'L\'\n    }, {\n      name: \'birthday\',\n      type: \'D\'\n    }, {\n      name: \'stature\',\n      type: \'N\',\n      precision: \'2\'\n    }, {\n      name: \'registDate\',\n      type: \'C\'\n    }\n    ];\n\n    doc = [\n    {\n      name: \'charmi\',\n      gender: true,\n      birthday: new Date(),\n      stature: 0,\n      registDate: new Date()\n    }, {\n      name: \'张三\',\n      gender: false,\n      birthday: new Date(1935, 1, 2),\n      stature: 1.87,\n      registDate: new Date()\n    }\n    ];\n\n    pathName = \'./dbfout\';\n    fileName = \'people.dbf\';\n    dbfWriter = new DBFWriter(header, doc, pathName, fileName, {\n    encoding: \'gb2312\',\n    coverIfFileExist: true\n    });\n    dbfWriter.write();\n    console.log("finish");\n\n### DBFParser\n    DBFKit = require "DBFKit"\n    DBFParser = DBFKit.DBFParser\n    \n    pathName = \'./dbfout\';\n    fileName = \'people.dbf\';\n    dbfParser = new DBFParser(pathName + "/" + fileName, "GBK");\n\n    dbfParser.on(\'head\', function(head) {\n    return console.log(head);\n    });\n    dbfParser.on(\'record\', function(record) {\n    return console.log(record);\n    });\n    dbfParser.on(\'end\', function() {\n    return console.log(\'finish\');\n    });\n\n    dbfParser.parse();',
+87 silly publish   readmeFilename: 'readme.md',
+87 silly publish   _id: 'DBFKit@1.0.0',
+87 silly publish   dist: { shasum: '4e11564393de4b86bf478ba018f12c678518b17c' },
+87 silly publish   _from: '.' }
+88 verbose url raw DBFKit
+89 verbose url resolving [ 'https://registry.npmjs.org/', './DBFKit' ]
+90 verbose url resolved https://registry.npmjs.org/DBFKit
+91 info trying registry request attempt 1 at 07:51:07
+92 http PUT https://registry.npmjs.org/DBFKit
+93 http 401 https://registry.npmjs.org/DBFKit
+94 info trying registry request attempt 1 at 07:51:08
+95 http PUT https://registry.npmjs.org/DBFKit
+96 http 403 https://registry.npmjs.org/DBFKit
+97 error publish Failed PUT response 403
+98 error Error: forbidden New packages must have all-lowercase names: DBFKit
+98 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:272:14)
+98 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:129:22)
+98 error     at Request.EventEmitter.emit (events.js:98:17)
+98 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:873:14)
+98 error     at Request.EventEmitter.emit (events.js:117:20)
+98 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:824:12)
+98 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+98 error     at _stream_readable.js:920:16
+98 error     at process._tickCallback (node.js:415:13)
+99 error If you need help, you may report this log at:
+99 error     <http://github.com/isaacs/npm/issues>
+99 error or email it to:
+99 error     <npm-@googlegroups.com>
+100 error System Linux 3.2.0-56-generic-pae
+101 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+102 error cwd /home/chenwb/workspace/DBFKit
+103 error node -v v0.10.21
+104 error npm -v 1.3.11
+105 verbose exit [ 1, true ]
