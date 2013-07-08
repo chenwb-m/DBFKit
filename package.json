@@ -1,6 +1,6 @@
 {
     "name": "dbfkit", 
-    "version": "1.0.1", 
+    "version": "1.0.2", 
     "description": "help to parse or write dbf file", 
     "main": "index.js", 
     "dependencies": {
