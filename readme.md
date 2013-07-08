@@ -43,7 +43,7 @@
 
     pathName = './dbfout';
     fileName = 'people.dbf';
-    dbfWriter = new DBFWriter(header, doc, pathName, fileName, {
+    dbfWriter = new DBFWriter(header, doc, fileName, pathName, {
     encoding: 'gb2312',
     coverIfFileExist: true
     });
