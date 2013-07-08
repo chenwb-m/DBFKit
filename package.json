@@ -19,7 +19,8 @@
     }, 
     "keywords": [
         "dbf", 
-        "dbfkit"
+        "dbfkit",
+        "dBase"
     ], 
     "author": "chenwb-m", 
     "license": "MIT", 

@@ -1,6 +1,6 @@
 DBFParser = require('./lib/DBFParser')
 DBFWriter = require('./lib/DBFWriter')
-module.exports.DBFKit = {
+module.exports = {
     DBFParser: DBFParser,
     DBFWriter: DBFWriter
 }

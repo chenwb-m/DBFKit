@@ -2,8 +2,8 @@
 ## Example
 
 ### DBFWriter
-    DBFKit = require "DBFKit"
-    DBFWriter = DBFKit.DBFWriter
+    dbfkit = require "dbfkit"
+    DBFWriter = dbfkit.DBFWriter
 
     header = [
     {
@@ -51,8 +51,8 @@
     console.log("finish");
 
 ### DBFParser
-    DBFKit = require "DBFKit"
-    DBFParser = DBFKit.DBFParser
+    dbfkit = require "dbfkit"
+    DBFParser = dbfkit.DBFParser
     
     pathName = './dbfout';
     fileName = 'people.dbf';
