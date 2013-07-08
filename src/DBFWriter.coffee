@@ -3,6 +3,8 @@ util = require 'util'
 path = require 'path'
 {Buffer} = require 'buffer'
 {Iconv}  = require 'iconv'
+JSZip = require "jszip"
+FileKit = require "./FileKit"
 
 FIELDSIZE = 
     C: 255
@@ -28,13 +30,13 @@ class DBFWriter
         type: 'D'
     }
     ###
-    constructor: (header, @doc, @dirName, @fileName, options) ->
+    constructor: (header, @doc, @fileName, @dirName="./", options) ->
         if !(util.isArray header)
             throw new Error "first paramter must be a Array object to indicate header!"
         if !(util.isArray @doc)
             throw new Error "second paramter must be a Array object hold all data to write!"
-        if typeof @dirName != "string"
-            throw new Error "you must provide a String object as third paramter to indicate which dir to store!"
+        # if typeof @dirName != "string"
+            # throw new Error "you must provide a String object as third paramter to indicate which dir to store!"
         if typeof @fileName != "string"
             throw new Error "you must provide a String object as fourth paramter to indicate the file name!"
         @_initOptions options
@@ -46,13 +48,26 @@ class DBFWriter
         @iconv = new Iconv 'UTF-8', @options.encoding+'//IGNORE'
 
     write: ()->
-        if fs.existsSync(@pathName) and @options.coverIfFileExist==false
+        if fs.existsSync(FileKit.makeSuffix @pathName, "dbf") and @options.coverIfFileExist==false
             throw new Error "the file aready exist!"
+        fs.writeFileSync (FileKit.makeSuffix @pathName, "dbf"), @_generate()
+
+    writeZip: ()->
+        if fs.existsSync(FileKit.makeSuffix @pathName, "zip") and @options.coverIfFileExist==false
+            throw new Error "the file aready exist!"
+        wsBuffer = @_generate()
+        zip = new JSZip()
+        zip.file (FileKit.makeSuffix @fileName, "dbf"), wsBuffer, 
+            base64: false
+        fs.writeFileSync((FileKit.makeSuffix @pathName, "zip"), zip.generate
+            type: "nodebuffer"
+        )
+
+    _generate: ()->
         wsBuffer = new Buffer 32 + 32*@header.length + 1 + @header.totalFieldsLength*@doc.length + 1
         @_writeBufferHead wsBuffer
         @_writeBufferBody wsBuffer
-        fs.writeFileSync @pathName, wsBuffer
-
+        return wsBuffer
 
     _initOptions: (options)->
         @options = {}

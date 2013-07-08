@@ -29,14 +29,17 @@ doc = [
         birthday: new Date(1935, 1, 2)
         stature: 1.87
         registDate: new Date()
+    ,
+        kit:32
 ]
 pathName = './dbfout'
-fileName = 'people.dbf'
+fileName = 'people'
 
-dbfWriter = new DBFWriter header, doc, pathName, fileName, 
+dbfWriter = new DBFWriter header, doc, fileName, pathName, 
     encoding: 'gb2312'
-    coverIfFileExist: true
-dbfWriter.write()
+    coverIfFileExist: false
+dbfWriter.writeZip()
+
 
 console.log "finish"
 #console.log 21.toFixed(2).toString().charCodeAt(0)

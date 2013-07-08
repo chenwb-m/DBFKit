@@ -1,6 +1,7 @@
 {EventEmitter} = require 'events'
 fs = require 'fs'
 {Iconv}  = require 'iconv'
+JSZip = require "jszip"
 
 class DBFParser extends EventEmitter
     constructor: (@fileName, @encoding='GBK') ->
@@ -17,6 +18,8 @@ class DBFParser extends EventEmitter
             @_parseHead buffer
             @_parseRecords buffer
             @emit 'end'
+            
+    parseZip: ->
 
     _parseHead: (buffer) =>
         head = {}
