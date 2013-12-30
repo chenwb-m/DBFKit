@@ -1,0 +1,26 @@
+{
+  "name": "DBFKit",
+  "version": "0.0.1",
+  "description": "help to parse or write dbf file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "iconv": "*",
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenwb-m/DBFKit.git"
+  },
+  "keywords": [
+    "dbf",
+    "DBFKit"
+  ],
+  "author": "chenwb-m",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenwb-m/DBFKit/issues"
+  }
+}
