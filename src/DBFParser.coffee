@@ -2,13 +2,13 @@
 fs = require 'fs'
 {Iconv}  = require 'iconv'
 
-class Parser extends EventEmitter
+class DBFParser extends EventEmitter
     constructor: (@fileName, @encoding='GBK') ->
         @iconv = new Iconv @encoding, 'UTF-8//IGNORE'
         # yyyy-MM-dd HH:mm:ss 
         @timeReg1 = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/
         # yyyy-MM-dd-HH
-        @timeReg2 = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)-([01][0-9]|2[0-3])/
+        # @timeReg2 = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)-([01][0-9]|2[0-3])/
 
     parse: ->
         fs.readFile @fileName, (err, buffer)=>
@@ -64,12 +64,12 @@ class Parser extends EventEmitter
                 if value
                     if @timeReg1.test value
                         value = new Date value
-                    if @timeReg2.test value
-                        yy = parseInt buffer.slice(begin, begin+4)
-                        mm = parseInt buffer.slice(begin+5, begin+7) - 1
-                        dd = parseInt buffer.slice(begin+8, begin+10)
-                        hh = parseInt buffer.slice(begin+11, begin+13)
-                        value = new Date yy, mm, dd, hh, 0, 0
+                    # if @timeReg2.test value
+                    #     yy = parseInt buffer.slice(begin, begin+4)
+                    #     mm = parseInt buffer.slice(begin+5, begin+7) - 1
+                    #     dd = parseInt buffer.slice(begin+8, begin+10)
+                    #     hh = parseInt buffer.slice(begin+11, begin+13)
+                    #     value = new Date yy, mm, dd, hh, 0, 0
                 else
                     value = null
             when 'N', 'F'
@@ -98,4 +98,4 @@ class Parser extends EventEmitter
                 
         {name: field.name, value: value}
 
-module.exports = Parser
+module.exports = DBFParser
