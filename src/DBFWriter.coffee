@@ -58,6 +58,7 @@ class DBFWriter
         wsBuffer = @_generate()
         zip = new JSZip()
         zip.file (FileKit.makeSuffix @fileName, "dbf"), wsBuffer, 
+            compression: "DEFLATE"
             base64: false
         fs.writeFileSync((FileKit.makeSuffix @pathName, "zip"), zip.generate
             type: "nodebuffer"
