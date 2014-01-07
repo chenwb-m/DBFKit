@@ -36,7 +36,7 @@ class DBFParser extends EventEmitter
                 type: (String.fromCharCode buffer[i+11]).replace /[\u0000]+$/, ''
                 address: buffer.readUInt32LE i+12, true
                 length: buffer.readUInt8 i+16
-                accuracy: buffer.readUInt8 i+17
+                precision: buffer.readUInt8 i+17
             if field.name != ''
                 head.fields[k++] = field
             field
