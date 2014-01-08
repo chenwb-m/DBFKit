@@ -6,6 +6,8 @@ path = require 'path'
 JSZip = require "jszip"
 FileKit = require "./FileKit"
 
+execSync = require 'exec-sync'
+
 FIELDSIZE = 
     C: 255
     D: 8
@@ -49,7 +51,7 @@ class DBFWriter
 
     write: ()->
         if fs.existsSync(FileKit.makeSuffix @pathName, "dbf") and @options.coverIfFileExist==false
-            throw new Error "the file aready exist!"
+            throw new Error "the dbf file aready exist!"
         fs.writeFileSync (FileKit.makeSuffix @pathName, "dbf"), @_generate()
 
     writeZip: ()->
@@ -63,6 +65,15 @@ class DBFWriter
         fs.writeFileSync((FileKit.makeSuffix @pathName, "zip"), zip.generate
             type: "nodebuffer"
         )
+
+    writeZipByLocal: ()->
+        if fs.existsSync(FileKit.makeSuffix @pathName, "zip") and @options.coverIfFileExist==false
+            throw new Error "the zip file aready exist!"
+        @write()
+        cmd = "zip -m #{FileKit.makeSuffix @pathName, "zip"} #{FileKit.makeSuffix @pathName, "dbf"}"
+        result = execSync cmd, true
+        throw new Error result.stderr if result.stderr
+        throw new Error result.stdout unless fs.existsSync(FileKit.makeSuffix @pathName, "zip")
 
     _generate: ()->
         wsBuffer = new Buffer 32 + 32*@header.length + 1 + @header.totalFieldsLength*@doc.length + 1

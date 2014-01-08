@@ -37,8 +37,8 @@ fileName = 'people'
 
 dbfWriter = new DBFWriter header, doc, fileName, pathName, 
     encoding: 'gb2312'
-    coverIfFileExist: false
-dbfWriter.writeZip()
+    coverIfFileExist: true
+dbfWriter.writeZipByLocal()
 
 
 console.log "finish"
