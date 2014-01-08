@@ -70,7 +70,7 @@ class DBFWriter
         if fs.existsSync(FileKit.makeSuffix @pathName, "zip") and @options.coverIfFileExist==false
             throw new Error "the zip file aready exist!"
         @write()
-        cmd = "zip -m #{FileKit.makeSuffix @pathName, "zip"} #{FileKit.makeSuffix @pathName, "dbf"}"
+        cmd = "zip -jqm #{FileKit.makeSuffix @pathName, "zip"} #{FileKit.makeSuffix @pathName, "dbf"}"
         result = execSync cmd, true
         throw new Error result.stderr if result.stderr
         throw new Error result.stdout unless fs.existsSync(FileKit.makeSuffix @pathName, "zip")
