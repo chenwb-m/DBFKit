@@ -32,7 +32,7 @@ class DBFParser extends EventEmitter
         k = 0
         @fields = for i in [32 .. @headOffset - 32] by 32
             field = 
-                name: (@iconv.convert(buffer.slice i, i+11).toString().replace /[\u0000]+$/, '').replace /^[\r]+|[\n]+|[\r\n]+|[\n\r]+/, ''
+                name: (@iconv.convert(buffer.slice i, i+11).toString().replace /[\u0000].*$/, '').replace /^[\r]+|[\n]+|[\r\n]+|[\n\r]+/, ''
                 type: (String.fromCharCode buffer[i+11]).replace /[\u0000]+$/, ''
                 address: buffer.readUInt32LE i+12, true
                 length: buffer.readUInt8 i+16
@@ -47,17 +47,19 @@ class DBFParser extends EventEmitter
         bufferLength = buffer.length
         bufferTemp = null
         # for point=@headOffset; point<endPoint && point<bufferLength; point+=@recordLength
-        for point in [@headOffset+1..endPoint] by @recordLength when point < bufferLength
+        for point in [@headOffset..endPoint] by @recordLength when point < bufferLength
             bufferTemp = buffer.slice point, point+@recordLength
             # console.log "begin:#{point}; end:#{point+@recordLength};"
             record = []
             i = 0
-            curPoint = 0
+            curPoint = 1
+            deletedFlag = (bufferTemp[0] == 42 || bufferTemp[0] == '*')
             for field in @fields
                 if field.name == ''
                     curPoint+=field.length
                 else
                     record[i++] = @_parseField curPoint, curPoint+=field.length, field, bufferTemp
+            record["_deletedFlag"] = deletedFlag
             @emit 'record', record
 
     _parseField: (begin, end, field, buffer) =>

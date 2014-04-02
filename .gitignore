@@ -6,3 +6,4 @@ dbf
 .settings/
 test/dbf/
 test/dbfout/
+test/.DS_store

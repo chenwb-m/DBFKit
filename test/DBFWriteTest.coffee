@@ -29,8 +29,6 @@ doc = [
         birthday: new Date(1935, 1, 2)
         stature: 1.87
         registDate: new Date()
-    ,
-        kit:32
 ]
 pathName = './dbfout'
 fileName = 'people'
